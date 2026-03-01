@@ -7,6 +7,7 @@ import { HeroUINativeProvider } from "heroui-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { KeyboardProvider } from "react-native-keyboard-controller";
 
+import { AnimatedSplashOverlay } from "@/components/animated-splash-overlay";
 import { AppThemeProvider } from "@/contexts/app-theme-context";
 import { authClient } from "@/lib/auth-client";
 
@@ -37,6 +38,7 @@ export default function Layout() {
         <KeyboardProvider>
           <AppThemeProvider>
             <HeroUINativeProvider>
+              <AnimatedSplashOverlay />
               <StackLayout />
             </HeroUINativeProvider>
           </AppThemeProvider>

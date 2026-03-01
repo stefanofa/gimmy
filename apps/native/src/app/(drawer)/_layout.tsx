@@ -1,6 +1,6 @@
-import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 import { Link } from "expo-router";
 import { Drawer } from "expo-router/drawer";
+import { SymbolView } from "expo-symbols";
 import { useThemeColor } from "heroui-native";
 import { useCallback } from "react";
 import { Pressable, Text } from "react-native";
@@ -35,11 +35,11 @@ function DrawerLayout() {
               Home
             </Text>
           ),
-          drawerIcon: ({ size, color, focused }) => (
-            <Ionicons
-              color={focused ? color : themeColorForeground}
-              name="home-outline"
-              size={size}
+          drawerIcon: ({ color, focused }) => (
+            <SymbolView
+              name={{ ios: "house", android: "home", web: "home" }}
+              size={22}
+              tintColor={focused ? color : themeColorForeground}
             />
           ),
         }}
@@ -53,20 +53,24 @@ function DrawerLayout() {
               Tabs
             </Text>
           ),
-          drawerIcon: ({ size, color, focused }) => (
-            <MaterialIcons
-              color={focused ? color : themeColorForeground}
-              name="border-bottom"
-              size={size}
+          drawerIcon: ({ color, focused }) => (
+            <SymbolView
+              name={{
+                ios: "square.grid.2x2",
+                android: "grid_view",
+                web: "grid_view",
+              }}
+              size={22}
+              tintColor={focused ? color : themeColorForeground}
             />
           ),
           headerRight: () => (
             <Link asChild href="/modal">
               <Pressable className="mr-4">
-                <Ionicons
-                  color={themeColorForeground}
-                  name="add-outline"
+                <SymbolView
+                  name={{ ios: "plus", android: "add", web: "add" }}
                   size={24}
+                  tintColor={themeColorForeground}
                 />
               </Pressable>
             </Link>

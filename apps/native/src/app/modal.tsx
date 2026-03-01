@@ -1,5 +1,5 @@
-import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
+import { SymbolView } from "expo-symbols";
 import { Button, Surface, useThemeColor } from "heroui-native";
 import { Text, View } from "react-native";
 
@@ -18,10 +18,14 @@ function Modal() {
         <Surface className="w-full max-w-sm rounded-lg p-5" variant="secondary">
           <View className="items-center">
             <View className="mb-3 h-12 w-12 items-center justify-center rounded-lg bg-accent">
-              <Ionicons
-                color={accentForegroundColor}
-                name="checkmark"
+              <SymbolView
+                name={{
+                  ios: "checkmark",
+                  android: "check",
+                  web: "check",
+                }}
                 size={24}
+                tintColor={accentForegroundColor}
               />
             </View>
             <Text className="mb-1 font-medium text-foreground text-lg">
