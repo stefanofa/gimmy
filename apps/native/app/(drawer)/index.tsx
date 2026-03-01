@@ -1,6 +1,6 @@
 import { api } from "@gimmy/backend/convex/_generated/api";
 import { useConvexAuth, useQuery } from "convex/react";
-import { Button, Chip, Separator, Spinner, Surface, useThemeColor } from "heroui-native";
+import { Button, Surface, useThemeColor } from "heroui-native";
 import { Text, View } from "react-native";
 
 import { Container } from "@/components/container";
@@ -20,37 +20,39 @@ export default function Home() {
 
   return (
     <Container className="px-4 pb-4">
-      <View className="py-6 mb-5">
-        <Text className="text-3xl font-semibold text-foreground tracking-tight">
+      <View className="mb-5 py-6">
+        <Text className="font-semibold text-3xl text-foreground tracking-tight">
           Better T Stack
         </Text>
-        <Text className="text-muted text-sm mt-1">Full-stack TypeScript starter</Text>
+        <Text className="mt-1 text-muted text-sm">
+          Full-stack TypeScript starter
+        </Text>
       </View>
 
       {user ? (
-        <Surface variant="secondary" className="mb-4 p-4 rounded-xl">
+        <Surface className="mb-4 rounded-xl p-4" variant="secondary">
           <View className="flex-row items-center justify-between">
             <View className="flex-1">
-              <Text className="text-foreground font-medium">{user.name}</Text>
-              <Text className="text-muted text-xs mt-0.5">{user.email}</Text>
+              <Text className="font-medium text-foreground">{user.name}</Text>
+              <Text className="mt-0.5 text-muted text-xs">{user.email}</Text>
             </View>
             <Button
-              variant="danger"
-              size="sm"
               onPress={() => {
                 authClient.signOut();
               }}
+              size="sm"
+              variant="danger"
             >
               Sign Out
             </Button>
           </View>
         </Surface>
       ) : null}
-      <Surface variant="secondary" className="p-4 rounded-xl">
-        <Text className="text-foreground font-medium mb-2">API Status</Text>
+      <Surface className="rounded-xl p-4" variant="secondary">
+        <Text className="mb-2 font-medium text-foreground">API Status</Text>
         <View className="flex-row items-center gap-2">
           <View
-            className={`w-2 h-2 rounded-full ${healthCheck === "OK" ? "bg-success" : "bg-danger"}`}
+            className={`h-2 w-2 rounded-full ${healthCheck === "OK" ? "bg-success" : "bg-danger"}`}
           />
           <Text className="text-muted text-xs">
             {healthCheck === undefined

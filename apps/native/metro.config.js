@@ -1,8 +1,11 @@
 const { getDefaultConfig } = require("expo/metro-config");
 const { withUniwindConfig } = require("uniwind/metro");
-const { wrapWithReanimatedMetroConfig } = require("react-native-reanimated/metro-config");
+const {
+  wrapWithReanimatedMetroConfig,
+} = require("react-native-reanimated/metro-config");
 
 /** @type {import('expo/metro-config').MetroConfig} */
+// biome-ignore lint/correctness/noGlobalDirnameFilename: must use __dirname
 const config = getDefaultConfig(__dirname);
 
 const uniwindConfig = withUniwindConfig(wrapWithReanimatedMetroConfig(config), {
