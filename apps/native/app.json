@@ -1,0 +1,17 @@
+{
+  "expo": {
+    "scheme": "gimmy",
+    "userInterfaceStyle": "automatic",
+    "orientation": "default",
+    "web": {
+      "bundler": "metro"
+    },
+    "name": "gimmy",
+    "slug": "gimmy",
+    "plugins": ["expo-font"],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}
