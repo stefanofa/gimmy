@@ -34,12 +34,12 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.0",
+    "@biomejs/biome": "2.4.6",
     "@gimmy/config": "workspace:*",
-    "lefthook": "latest",
-    "turbo": "^2.6.3",
+    "lefthook": "^2.1.4",
+    "turbo": "^2.8.16",
     "typescript": "catalog:",
-    "ultracite": "7.2.4"
+    "ultracite": "7.2.5"
   },
   "packageManager": "bun@1.3.8"
 }
